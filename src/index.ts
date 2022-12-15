@@ -147,7 +147,7 @@ export class Glify {
     );
   }
 }
-
+console.log("hooking up GL to Leaflet...")
 export const glify = new Glify();
 export default glify;
 if (typeof window !== "undefined" && window.L) {
@@ -155,4 +155,8 @@ if (typeof window !== "undefined" && window.L) {
   window.L.glify = glify;
   // @ts-expect-error exporting it to window
   window.L.Glify = Glify;
+  console.log('...Failed')
+}
+else{
+  console.log('...Failed')
 }
